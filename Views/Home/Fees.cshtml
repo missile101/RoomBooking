@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Fees";
+}
+
+
+<h2 style="text-align:center"> Room Booking Fees</h2>
+<table class="center-block table-responsive"width="700px">
+    <tr>
+        <td style="font-weight:bold; font-size:large;padding:0px 4px 20px 10px;">Booking Duration</td>
+        <td style="font-weight:bold; font-size:large; padding:0px 4px 20px 10px;">Booking Price</td>
+    </tr>
+    <tr>
+        <td class="alert-info text-center"> 1 Night </td>
+        <td class="text-center">£99</td>
+              
+    </tr>
+
+    <tr>
+        <td class="alert-info text-center"> 2 nights </td>
+        <td class="text-center">£198</td>
+
+    </tr>
+    <tr>
+        <td class="alert-success text-center"> 3 Nights </td>
+        <td class="text-center">£297</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="alert-danger text-center">@Html.ActionLink("Save","ConvertPDF","Home")</td>
+    </tr>
+
+
+</table>
+

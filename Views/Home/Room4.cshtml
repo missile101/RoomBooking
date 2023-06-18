@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Room4";
+}
+
+<h2>Room4</h2>
+<div class="container-fluid">
+    <h2 class="text-center">Dundee Room</h2>
+    <div class="row" style="padding-top:5em">
+        <div class="col-sm-12">
+            <img  src="~/Images/Hotel_Dundee.jpg"  class="img-responsive margin" style="width:100%" alt="Dundee Room">
+            <p>For a comfortable and affordable stay, the Dundee Room is an excellent choice. This room features a cozy double bed and although it doesn't have an ensuite bathroom, guests have access to a shared bathroom nearby. The room is thoughtfully designed to provide a relaxing environment, allowing guests to unwind after a day of exploring. Enjoy a peaceful night's sleep and wake up ready to seize the day in Dundee.</p>
+            <h3>Room Features</h3>
+            <ul>
+                <li>Double Bed</li>
+                <li>close to city centere</li>
+                <li>Breakfast Included</li>
+                <li>Bathroom ensuite</li>
+
+            </ul>
+            <a href="javascript:void(0)" class="btn btn-light-grey" onclick="showBookingForm()">Book Now</a>
+            <link rel="stylesheet" type="text/css" href="~/Content/Site.css">
+
+        </div>
+    </div>
+</div>
+
+<div id="bookingForm" style="display: none;">
+    <h2>Book Now</h2>
+    <form id="bookingFormSubmit">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <button type="submit">Confirm Booking</button>
+    </form>
+    <div id="confirmationMessage" style="display: none;">
+        <h3>Booking Confirmed!</h3>
+        <p>Your booking for the Dundee Room has been confirmed. We'll contact you shortly with further details. Thank you!</p>
+    </div>
+</div>
+
+<script>
+    function showBookingForm() {
+        document.getElementById("bookingForm").style.display = "block";
+    }
+
+    document.getElementById("bookingFormSubmit").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get the input values
+        var name = document.getElementById("name").value;
+        var contact = document.getElementById("contact").value;
+        var email = document.getElementById("email").value;
+
+        // Perform additional validation and processing here
+
+        // Hide the booking form
+        document.getElementById("bookingForm").style.display = "none";
+
+        // Display the confirmation message
+        var confirmationMessage = document.getElementById("confirmationMessage");
+
+
+        confirmationMessage.style.display = "block";
+        confirmationMessage.innerHTML = "<h3>Booking Confirmed!</h3><p>Dear " + name + ", your booking for the Dundee Room has been confirmed. We'll contact you shortly at " + email + " or " + contact + " with further details. Thank you!</p>";
+    });
+</script>
+

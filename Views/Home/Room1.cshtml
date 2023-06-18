@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Room1";
+}
+<div class="container-fluid">
+    <h2 class="text-center">Glasgow Room</h2>
+    <div class="row" style="padding-top:5em">
+        <div class="col-sm-12">
+            <img src="~/Images/Hotel_Glasgow.jpg" class="img-responsive margin" style="width:100%" alt="Glasgow Room">
+            <p>The Glasgow Room offers a cozy and comfortable retreat with its twin beds and ensuite bathroom. The room is tastefully decorated with a blend of modern and traditional Scottish elements. Guests can enjoy a peaceful night's sleep and wake up to beautiful views of the surrounding area. Whether you're traveling with a friend or seeking a spacious room for yourself, the Glasgow Room is an ideal choice.</p>
+            <h3>Room Features</h3>
+            <ul>
+                <li>Twin beds</li>
+                <li>Ensuite bathroom</li>
+                <li>Beautiful views</li>
+                <li>Cozy and comfortable</li>
+            </ul>
+            <a href="javascript:void(0)" class="btn btn-light-grey" onclick="showBookingForm()">Book Now</a>
+            <link rel="stylesheet" type="text/css" href="~/Content/Site.css">
+
+        </div>
+    </div>
+</div>
+
+<div id="bookingForm" style="display: none;">
+    <h2>Book Now</h2>
+    <form id="bookingFormSubmit">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <button type="submit">Confirm Booking</button>
+    </form>
+    <div id="confirmationMessage" style="display: none;">
+        <h3>Booking Confirmed!</h3>
+        <p>Your booking for the Glasgow Room has been confirmed. We'll contact you shortly with further details. Thank you!</p>
+    </div>
+</div>
+
+<script>
+    function showBookingForm() {
+        document.getElementById("bookingForm").style.display = "block";
+    }
+
+    document.getElementById("bookingFormSubmit").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get the input values
+        var name = document.getElementById("name").value;
+        var contact = document.getElementById("contact").value;
+        var email = document.getElementById("email").value;
+
+        // Perform additional validation and processing here
+
+        // Hide the booking form
+        document.getElementById("bookingForm").style.display = "none";
+
+        // Display the confirmation message
+        var confirmationMessage = document.getElementById("confirmationMessage");
+        
+        
+        confirmationMessage.style.display = "block";
+        confirmationMessage.innerHTML = "<h3>Booking Confirmed!</h3><p>Dear " + name + ", your booking for the Glasgow Room has been confirmed. We'll contact you shortly at " + email + " or " + contact + " with further details. Thank you!</p>";
+    });
+</script>
+

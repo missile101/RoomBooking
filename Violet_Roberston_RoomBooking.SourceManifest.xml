@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\asmaa\Documents\Violet_Roberston_RoomBooking.YM\Violet_Roberston_RoomBooking.YM\obj\Debug\Package\PackageTmp" />
+  <setAcl path="C:\Users\asmaa\Documents\Violet_Roberston_RoomBooking.YM\Violet_Roberston_RoomBooking.YM\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Users\asmaa\Documents\Violet_Roberston_RoomBooking.YM\Violet_Roberston_RoomBooking.YM\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>
